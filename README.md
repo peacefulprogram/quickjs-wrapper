@@ -71,24 +71,16 @@ Alternatively, if you already have the project checked out, you can initialize t
 ```git
 git submodule update --init
 ```
-To build the JNI shared library, please follow these steps: 
-- Install [jdk](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html) and [cmake](https://cmake.org/download/).  
-- Set the **JAVA_HOME** system environment variable, and add **cmake** to your **PATH**.
-For Windows users, you should install [mingw-w64](https://github.com/skeeto/w64devkit) and add **bin** directory to **PATH**.  
-- For Windows
-```bash
-cd wrapper-java\src\main
-cmake -B build -S .  -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
-cmake --build build
-```
+To build the JNI shared library, please follow these steps:
 
-- For Linux and macOS
-```shell
-cd wrapper-java/src/main
-cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
-cmake --build build
-```
+1. Install [JDK](https://docs.aws.amazon.com/corretto/latest/corretto-7-ug/downloads-list.html) and [CMake](https://cmake.org/download/).
 
+2. Set the **JAVA_HOME** system environment variable, and add **CMake** to your **PATH**.  
+    - For Windows users, install [mingw-w64](https://github.com/skeeto/w64devkit) and add its **bin** directory to your **PATH**.
+
+3. Run the build script:  
+    - **Windows:** [build-jni.bat](./build-jni.bat)
+    - **MacOS/Linux:** [build-jni.sh](./build-jni.sh)
 ## Usage
 
 ### Initialization
