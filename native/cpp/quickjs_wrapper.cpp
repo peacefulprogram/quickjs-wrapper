@@ -129,7 +129,10 @@ static void jsFuncCallbackFinalizer(JSRuntime *rt, JSValue val) {
 
 static JSClassDef js_func_callback_class = {
         "JSFuncCallback",
-        .finalizer = jsFuncCallbackFinalizer,
+        jsFuncCallbackFinalizer,
+        nullptr,
+        nullptr,
+        nullptr
 };
 
 static JSValue jsFnCallback(JSContext *ctx,
